@@ -20,32 +20,30 @@ class AudioFileController extends Controller
         return view('audio_files.create');
     }
 
-
     public function store(Request $request)
     {
         $request->validate([
-            'audio_file' => 'required|file|mimes:mp3,wav,ogg,mp4,avi,mov|max:25600', // 25MB limit
+            'audio_file' => 'required|file|mimes:mp3,wav,ogg|max:10240',
         ]);
-       
+
         $file = $request->file('audio_file');
         $fileName = time() . '_' . $file->getClientOriginalName();
         $filePath = $file->storeAs('audio_files', $fileName, 'public');
-    
-        $fileType = strpos($file->getMimeType(), 'video') === 0 ? 'video' : 'audio';
-    
+
         $audioFile = AudioFile::create([
             'user_id' => auth()->id(),
             'file_name' => $fileName,
             'file_path' => $filePath,
-            'file_type' => $fileType,
         ]);
 
-        // Transcribe the file using OpenAI Whisper
+        // Transcribe the audio file using OpenAI Whisper
         $response = OpenAI::audio()->transcribe([
             'model' => 'whisper-1',
             'file' => fopen(storage_path('app/public/' . $filePath), 'r'),
             'response_format' => 'verbose_json',
         ]);
+    
+        $transcription = $this->formatTranscription($response->segments);
 
         $transcription = $response->text;
         $segments = $response->segments;
@@ -66,7 +64,7 @@ class AudioFileController extends Controller
             'vtt_path' => 'transcriptions/' . $vttFileName,
         ]);
 
-        return redirect()->route('audio_files.show', $audioFile)->with('success', 'File uploaded and transcribed successfully.');
+        return redirect()->route('audio_files.index')->with('success', 'Audio file uploaded and transcribed successfully.');
     }
 
     public function show(AudioFile $audioFile)
