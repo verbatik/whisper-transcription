@@ -6,6 +6,7 @@ use App\Models\AudioFile;
 use Illuminate\Http\Request;
 use OpenAI\Laravel\Facades\OpenAI;
 use Illuminate\Support\Facades\Storage;
+use FFMpeg\FFMpeg;
 
 class AudioFileController extends Controller
 {
@@ -23,7 +24,7 @@ class AudioFileController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'audio_file' => 'required|file|mimes:mp3,wav,ogg|max:10240',
+            'audio_file' => 'required|file|mimes:mp3,wav,ogg,mp4,mov,avi|max:25600',
         ]);
 
         $file = $request->file('audio_file');
@@ -36,6 +37,19 @@ class AudioFileController extends Controller
             'file_path' => $filePath,
         ]);
 
+        // Extract audio if it's a video file
+        $fileExtension = $file->getClientOriginalExtension();
+        if (in_array($fileExtension, ['mp4', 'mov', 'avi'])) {
+            $ffmpeg = FFMpeg::create();
+            $video = $ffmpeg->open(storage_path('app/public/' . $filePath));
+            $audioFileName = pathinfo($fileName, PATHINFO_FILENAME) . '.mp3';
+            $audioFilePath = 'audio_files/' . $audioFileName;
+            $video->save(new \FFMpeg\Format\Audio\Mp3(), storage_path('app/public/' . $audioFilePath));
+            
+            // Update file path to the extracted audio
+            $filePath = $audioFilePath;
+        }
+
         // Transcribe the audio file using OpenAI Whisper
         $response = OpenAI::audio()->transcribe([
             'model' => 'whisper-1',
@@ -45,7 +59,6 @@ class AudioFileController extends Controller
     
         $transcription = $this->formatTranscription($response->segments);
 
-        $transcription = $response->text;
         $segments = $response->segments;
 
         // Generate SRT file
@@ -94,21 +107,21 @@ class AudioFileController extends Controller
     }
 
     private function formatTranscription($segments)
-{
-    $formattedTranscription = '';
-    foreach ($segments as $segment) {
-        $startTime = $this->formatTimestamp($segment['start']);
-        $endTime = $this->formatTimestamp($segment['end']);
-        $formattedTranscription .= "[{$startTime} - {$endTime}] {$segment['text']}\n";
+    {
+        $formattedTranscription = '';
+        foreach ($segments as $segment) {
+            $startTime = $this->formatTimestamp($segment['start']);
+            $endTime = $this->formatTimestamp($segment['end']);
+            $formattedTranscription .= "[{$startTime} - {$endTime}] {$segment['text']}\n";
+        }
+        return $formattedTranscription;
     }
-    return $formattedTranscription;
-}
 
-private function formatTimestamp($seconds)
-{
-    $hours = floor($seconds / 3600);
-    $minutes = floor(($seconds % 3600) / 60);
-    $secs = $seconds % 60;
-    return sprintf('%02d:%02d:%06.3f', $hours, $minutes, $secs);
-}
+    private function formatTimestamp($seconds)
+    {
+        $hours = floor($seconds / 3600);
+        $minutes = floor(($seconds % 3600) / 60);
+        $secs = $seconds % 60;
+        return sprintf('%02d:%02d:%06.3f', $hours, $minutes, $secs);
+    }
 }
