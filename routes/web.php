@@ -5,9 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AudioFileController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\Auth\GoogleController;
+use App\Http\Controllers\StripeController;
 
-
-
+use App\Http\Controllers\UpgradeController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -26,6 +26,14 @@ Route::get('/', [LandingPageController::class, 'index'])->name('landing');
 Route::get('login/google', [GoogleController::class, 'redirectToGoogle'])->name('login.google');
 Route::get('auth/callback', [GoogleController::class, 'handleGoogleCallback']); // Changed this line
 
+Route::middleware(['auth'])->group(function () {
+    Route::post('/stripe/create-checkout-session', [StripeController::class, 'createCheckoutSession'])->name('stripe.create-checkout-session');
+    Route::get('/stripe/success', [StripeController::class, 'success'])->name('stripe.success');
+    Route::get('/stripe/cancel', [StripeController::class, 'cancel'])->name('stripe.cancel');
+});
+
+
+Route::get('/upgrade', [UpgradeController::class, 'show'])->name('upgrade');
 // Keep your existing routes below this new route
 
 Route::middleware(['auth'])->group(function () {

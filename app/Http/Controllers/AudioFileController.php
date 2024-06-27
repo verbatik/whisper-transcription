@@ -16,13 +16,23 @@ class AudioFileController extends Controller
         return view('audio_files.index', compact('audioFiles'));
     }
 
+
     public function create()
     {
-        return view('audio_files.create');
+        $user = auth()->user();
+        $canTranscribe = $user->canGenerateTranscription();
+        return view('audio_files.create', compact('canTranscribe'));
     }
 
     public function store(Request $request)
     {
+        $user = auth()->user();
+
+        if (!$user->canGenerateTranscription()) {
+            return redirect()->route('audio_files.create')
+                ->with('error', 'Your daily limit is exhausted. Please wait until tomorrow or upgrade to the unlimited version.');
+        }
+
         $request->validate([
             'audio_file' => 'required|file|mimes:mp3,wav,ogg,mp4,mov,avi|max:25600',
         ]);
@@ -32,7 +42,7 @@ class AudioFileController extends Controller
         $filePath = $file->storeAs('audio_files', $fileName, 'public');
 
         $audioFile = AudioFile::create([
-            'user_id' => auth()->id(),
+            'user_id' => $user->id,
             'file_name' => $fileName,
             'file_path' => $filePath,
         ]);
@@ -76,6 +86,8 @@ class AudioFileController extends Controller
             'srt_path' => 'transcriptions/' . $srtFileName,
             'vtt_path' => 'transcriptions/' . $vttFileName,
         ]);
+
+        $user->incrementDailyGenerations();
 
         return redirect()->route('audio_files.index')->with('success', 'Audio file uploaded and transcribed successfully.');
     }
