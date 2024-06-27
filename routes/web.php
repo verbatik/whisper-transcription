@@ -22,6 +22,8 @@ Route::middleware('auth')->group(function () {
 Route::get('/', [LandingPageController::class, 'index'])->name('landing');
 
 
+Route::get('/srt-transcription', [LandingPageController::class, 'srtLanding'])->name('srt.landing');
+Route::get('/vtt-transcription', [LandingPageController::class, 'vttLanding'])->name('vtt.landing');
 
 Route::get('login/google', [GoogleController::class, 'redirectToGoogle'])->name('login.google');
 Route::get('auth/callback', [GoogleController::class, 'handleGoogleCallback']); // Changed this line

@@ -20,7 +20,7 @@ class StripeController extends Controller
                     'product_data' => [
                         'name' => 'Unlimited Transcriptions',
                     ],
-                    'unit_amount' => 1000, // $10.00
+                    'unit_amount' => 5900, // $59.00
                 ],
                 'quantity' => 1,
             ]],

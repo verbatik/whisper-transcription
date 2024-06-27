@@ -10,4 +10,13 @@ class LandingPageController extends Controller
     {
         return view('landing');
     }
+    public function srtLanding()
+    {
+        return view('landings.srt');
+    }
+
+    public function vttLanding()
+    {
+        return view('landings.vtt');
+    }
 }
