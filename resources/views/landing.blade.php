@@ -16,34 +16,33 @@
 <body class="antialiased bg-gray-50 text-gray-800">
     <div class="min-h-screen flex flex-col">
         <header class="bg-white shadow-sm">
-            <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-                <div class="flex items-center">
-                    <img src="/path-to-your-logo.svg" alt="Verbatik STT Logo" class="h-10 w-auto">
-                    <span class="ml-2 text-2xl font-bold text-blue-600">Verbatik STT</span>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <a href="#features" class="text-gray-600 hover:text-blue-600 transition">Features</a>
-                    <a href="{{ route('srt.landing') }}" class="text-gray-600 hover:text-blue-600 transition">SRT Generator</a>
-                    <a href="{{ route('vtt.landing') }}" class="text-gray-600 hover:text-blue-600 transition">VTT Generator</a>
-                    <a href="#how-it-works" class="text-gray-600 hover:text-blue-600 transition">How It Works</a>
-                    <a href="{{ route('login') }}" class="text-blue-600 hover:text-blue-800 font-semibold">Log In</a>
-                 
-                    <a href="{{ route('register') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition">Get Started Free</a>
-                </div>
-            </nav>
+        <nav class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+    <div class="flex items-center mb-4 md:mb-0">
+        <img src="/path-to-your-logo.svg" alt="Verbatik STT Logo" class="h-10 w-auto">
+        <span class="ml-2 text-2xl font-bold text-blue-600">Verbatik STT</span>
+    </div>
+    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
+        <a href="#features" class="text-gray-600 hover:text-blue-600 transition">Features</a>
+        <a href="{{ route('srt.landing') }}" class="text-gray-600 hover:text-blue-600 transition">SRT Generator</a>
+        <a href="{{ route('vtt.landing') }}" class="text-gray-600 hover:text-blue-600 transition">VTT Generator</a>
+        <a href="#how-it-works" class="text-gray-600 hover:text-blue-600 transition">How It Works</a>
+        <a href="{{ route('login') }}" class="text-blue-600 hover:text-blue-800 font-semibold">Log In</a>
+        <a href="{{ route('register') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition mt-2 md:mt-0">Get Started Free</a>
+    </div>
+</nav>
         </header>
 
         <main class="flex-grow">
-            <section class="gradient-bg text-white py-20">
-                <div class="container mx-auto px-4 text-center">
-                    <h1 class="text-5xl font-bold mb-6">Transcribe Speech in Any Language</h1>
-                    <p class="text-xl mb-8">Harness the power of AI for accurate, fast, and free speech-to-text conversion in over 100 languages!</p>
-                    <div class="flex justify-center space-x-4">
-                        <a href="{{ route('register') }}" class="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full text-lg transition hover-scale">Start Transcribing for Free</a>
-                        <a href="#demo" class="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-bold py-3 px-8 rounded-full text-lg transition hover-scale">See Demo</a>
-                    </div>
-                </div>
-            </section>
+        <section class="gradient-bg text-white py-12 md:py-20">
+    <div class="container mx-auto px-4 text-center">
+        <h1 class="text-3xl md:text-5xl font-bold mb-6">Transcribe Speech in Any Language</h1>
+        <p class="text-lg md:text-xl mb-8">Harness the power of AI for accurate, fast, and free speech-to-text conversion in over 100 languages!</p>
+        <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+            <a href="{{ route('register') }}" class="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full text-lg transition hover-scale">Start Transcribing for Free</a>
+            <a href="#demo" class="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-bold py-3 px-8 rounded-full text-lg transition hover-scale">See Demo</a>
+        </div>
+    </div>
+</section>
 
             <section id="features" class="py-20 bg-white">
                 <div class="container mx-auto px-4">

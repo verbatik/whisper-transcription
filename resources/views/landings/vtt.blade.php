@@ -16,21 +16,20 @@
 <body class="antialiased bg-gray-50 text-gray-800">
     <div class="min-h-screen flex flex-col">
         <header class="bg-white shadow-sm">
-            <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-                <div class="flex items-center">
-                    <img src="/path-to-your-logo.svg" alt="Verbatik STT Logo" class="h-10 w-auto">
-                    <span class="ml-2 text-2xl font-bold text-blue-600">Verbatik STT</span>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <a href="#features" class="text-gray-600 hover:text-blue-600 transition">Features</a>
-                    <a href="{{ route('srt.landing') }}" class="text-gray-600 hover:text-blue-600 transition">SRT Generator</a>
-                    <a href="{{ route('srt.landing') }}" class="text-gray-600 hover:text-blue-600 transition">VTT Generator</a>
-                    <a href="#how-it-works" class="text-gray-600 hover:text-blue-600 transition">How It Works</a>
-                    <a href="{{ route('login') }}" class="text-blue-600 hover:text-blue-800 font-semibold">Log In</a>
-                 
-                    <a href="{{ route('register') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition">Get Started Free</a>
-                </div>
-            </nav>
+        <nav class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+    <div class="flex items-center mb-4 md:mb-0">
+        <img src="/path-to-your-logo.svg" alt="Verbatik STT Logo" class="h-10 w-auto">
+        <span class="ml-2 text-2xl font-bold text-blue-600">Verbatik VTT</span>
+    </div>
+    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
+        <a href="#features" class="text-gray-600 hover:text-blue-600 transition">Features</a>
+        <a href="{{ route('srt.landing') }}" class="text-gray-600 hover:text-blue-600 transition">SRT Generator</a>
+        <a href="{{ route('vtt.landing') }}" class="text-gray-600 hover:text-blue-600 transition">VTT Generator</a>
+        <a href="#how-it-works" class="text-gray-600 hover:text-blue-600 transition">How It Works</a>
+        <a href="{{ route('login') }}" class="text-blue-600 hover:text-blue-800 font-semibold">Log In</a>
+        <a href="{{ route('register') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition mt-2 md:mt-0">Get Started Free</a>
+    </div>
+</nav>
         </header>
     </header>
 
