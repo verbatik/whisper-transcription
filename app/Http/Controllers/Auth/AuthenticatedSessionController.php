@@ -28,6 +28,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        // Skip email verification check on login
         return redirect()->intended(route('dashboard', absolute: false));
     }
 
