@@ -3,14 +3,18 @@
         <h2 class="font-bold text-3xl text-blue-800 leading-tight">
             {{ __('Unlock Unlimited Transcriptions') }}
         </h2>
+
+
     </x-slot>
+
+    @section('title', 'Vocaldo - Upgrade Now')
 
     <div class="py-12 bg-gray-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl rounded-lg">
                 <div class="p-8">
                     <div class="text-center mb-8">
-                        <h3 class="text-3xl font-bold text-gray-900 mb-4">Upgrade to Unlimited for Just $59!</h3>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">Upgrade to Unlimited for Just $49!</h3>
                         <p class="text-xl text-gray-600">Transform your workflow with unlimited transcriptions.</p>
                     </div>
 
@@ -43,6 +47,11 @@
                                     <svg class="h-5 w-5 text-blue-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                                     <span>Boost productivity with unlimited access</span>
                                 </li>
+
+                                <li class="flex items-start">
+                                    <svg class="h-5 w-5 text-blue-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                    <span>Remove Vocaldo Watermark</span>
+                                </li>
                                 <li class="flex items-start">
                                     <svg class="h-5 w-5 text-blue-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                     <span>Save time with faster processing</span>
@@ -56,14 +65,14 @@
                     </div>
 
                     <div class="text-center">
-                        <p class="text-2xl font-bold text-gray-800 mb-6">One-time payment of just $59 for lifetime access!</p>
+                        <p class="text-2xl font-bold text-gray-800 mb-6">One-time payment of just $49 for lifetime access!</p>
                         <form action="{{ route('stripe.create-checkout-session') }}" method="POST">
                             @csrf
                             <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                                 Upgrade Now and Unlock Unlimited Transcriptions
                             </button>
                         </form>
-                        <p class="mt-4 text-sm text-gray-600">Secure payment processed by Stripe. 30-day money-back guarantee.</p>
+                        <p class="mt-4 text-sm text-gray-600">Secure payment processed by Stripe. 3-day money-back guarantee.</p>
                     </div>
                 </div>
             </div>

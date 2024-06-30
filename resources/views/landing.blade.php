@@ -12,6 +12,18 @@
         .hover-scale { transition: transform 0.3s; }
         .hover-scale:hover { transform: scale(1.05); }
     </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-55M3QDFSWB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-55M3QDFSWB');
+</script>
+
+
 </head>
 <body class="antialiased bg-gray-50 text-gray-800">
     <div class="min-h-screen flex flex-col">
@@ -167,17 +179,19 @@
                             <li>✅ 10 transcriptions/day</li>
                             <li>✅ 120 minutes total length</li>
                             <li>✅ All language support</li>
+                            <li>✅ Watermark</li>
                             <li>❌ Priority processing</li>
                         </ul>
                         <a href="{{ route('register') }}" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition">Get Started</a>
                     </div>
                     <div class="bg-blue-600 text-white p-8 rounded-lg shadow-lg hover-scale w-full md:w-80 transform scale-105">
                         <h3 class="text-2xl font-bold mb-4">Unlimited</h3>
-                        <p class="text-4xl font-bold mb-6">$59<span class="text-lg font-normal">/forever</span></p>
+                        <p class="text-4xl font-bold mb-6">$49<span class="text-lg font-normal">/forever</span></p>
                         <ul class="mb-8 space-y-2">
                             <li>✅ Unlimited transcriptions</li>
                             <li>✅ Unlimited total length</li>
                             <li>✅ All language support</li>
+                            <li>✅ Remove Vocaldo Watermark</li>
                             <li>✅ Priority processing</li>
                         </ul>
                         <a href="{{ route('register') }}" class="block text-center bg-white text-blue-600 hover:bg-blue-100 font-bold py-2 px-4 rounded-full transition">Upgrade Now</a>

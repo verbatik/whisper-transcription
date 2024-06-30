@@ -5,6 +5,10 @@
         </h1>
     </x-slot>
 
+
+    @section('title', 'Vocaldo - Transcribe Audio and Video')
+
+
     <div class="py-12 bg-gray-50">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
