@@ -73,7 +73,7 @@
         </div>
     </div>
 
-    <div id="loadingOverlay" class="fixed inset-0 bg-gray-600 bg-opacity-75 hidden flex items-center justify-center">
+    <div id="loadingOverlay" class="fixed inset-0 bg-gray-600 bg-opacity-75  flex items-center justify-center">
         <div class="bg-white p-8 rounded-lg shadow-xl text-center">
             <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-blue-600 mx-auto"></div>
             <p class="mt-4 text-lg font-semibold text-gray-700">Processing your file...</p>
