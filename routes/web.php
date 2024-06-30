@@ -6,6 +6,8 @@ use App\Http\Controllers\AudioFileController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\StripeController;
+use App\Http\Controllers\DashboardController;
+
 
 use App\Http\Controllers\UpgradeController;
 
@@ -21,6 +23,8 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/', [LandingPageController::class, 'index'])->name('landing');
 
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/srt-transcription', [LandingPageController::class, 'srtLanding'])->name('srt.landing');
 Route::get('/vtt-transcription', [LandingPageController::class, 'vttLanding'])->name('vtt.landing');

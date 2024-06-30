@@ -3,12 +3,10 @@
         <div class="flex justify-between h-16">
             <div class="flex items-center">
                 <a href="{{ route('dashboard') }}" class="flex-shrink-0 flex items-center">
-                    <span class="text-xl font-semibold text-blue-600">Verbatik STT</span>
+                    <span class="text-xl font-semibold text-blue-600">Vocaldo</span>
                 </a>
                 <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium leading-5 transition duration-150 ease-in-out">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
+                 
                     <x-nav-link :href="route('audio_files.index')" :active="request()->routeIs('audio_files.index')" class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium leading-5 transition duration-150 ease-in-out">
                         {{ __('History') }}
                     </x-nav-link>

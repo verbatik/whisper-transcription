@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VTT Transcription AI | Verbatik STT - Fast & Accurate WebVTT Generation</title>
-    <meta name="description" content="Create precise WebVTT captions with Verbatik STT's AI-powered VTT transcription. Get time-stamped, web-ready captions in multiple languages. Try our VTT generator now!">
+    <title>VTT Transcription AI | Vocaldo - Fast & Accurate WebVTT Generation</title>
+    <meta name="description" content="Create precise WebVTT captions with Vocaldo's AI-powered VTT transcription. Get time-stamped, web-ready captions in multiple languages. Try our VTT generator now!">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -18,8 +18,8 @@
         <header class="bg-white shadow-sm">
         <nav class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
     <div class="flex items-center mb-4 md:mb-0">
-        <img src="/path-to-your-logo.svg" alt="Verbatik STT Logo" class="h-10 w-auto">
-        <span class="ml-2 text-2xl font-bold text-blue-600">Verbatik VTT</span>
+        <img src="/img/logo.svg" alt="Verbatik STT Logo" class="h-10 w-auto">
+        <span class="ml-2 text-2xl font-bold text-blue-600">Vocaldo VTT</span>
     </div>
     <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
         <a href="#features" class="text-gray-600 hover:text-blue-600 transition">Features</a>
@@ -143,7 +143,7 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-wrap justify-between">
                 <div class="w-full md:w-1/3 mb-6 md:mb-0">
-                    <h3 class="text-xl font-bold mb-4">Verbatik STT</h3>
+                    <h3 class="text-xl font-bold mb-4">Vocaldo</h3>
                     <p>AI-powered VTT transcription for web-optimized video captions.</p>
                 </div>
                 <div class="w-full md:w-1/3 mb-6 md:mb-0">
@@ -161,7 +161,7 @@
                 </div>
             </div>
             <div class="mt-8 pt-8 border-t border-gray-700 text-center">
-                <p>&copy; 2024 Verbatik STT. All rights reserved.</p>
+                <p>&copy; 2024 Verbatik Technologies Limited. All rights reserved.</p>
             </div>
         </div>
     </footer>

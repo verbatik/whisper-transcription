@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Verbatik STT - Revolutionary Speech-to-Text in Any Language</title>
+    <title>Vocaldo - Revolutionary Speech-to-Text in Any Language</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -18,8 +18,8 @@
         <header class="bg-white shadow-sm">
         <nav class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
     <div class="flex items-center mb-4 md:mb-0">
-        <img src="/path-to-your-logo.svg" alt="Verbatik STT Logo" class="h-10 w-auto">
-        <span class="ml-2 text-2xl font-bold text-blue-600">Verbatik STT</span>
+        <img src="/img/logo.svg" alt="Vocaldo STT Logo" class="h-10 w-auto">
+        <span class="ml-2 text-2xl font-bold text-blue-600">Vocaldo</span>
     </div>
     <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
         <a href="#features" class="text-gray-600 hover:text-blue-600 transition">Features</a>
@@ -46,7 +46,7 @@
 
             <section id="features" class="py-20 bg-white">
                 <div class="container mx-auto px-4">
-                    <h2 class="text-4xl font-bold text-center mb-12">Why Choose Verbatik STT?</h2>
+                    <h2 class="text-4xl font-bold text-center mb-12">Why Choose Vocaldo?</h2>
                     <div class="grid md:grid-cols-3 gap-8">
                         <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale">
                             <div class="text-blue-600 text-4xl mb-4">🌍</div>
@@ -83,7 +83,7 @@
             </section>
             <section id="demo" class="py-20 bg-gray-100">
     <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-bold text-center mb-12">See Verbatik STT in Action</h2>
+        <h2 class="text-4xl font-bold text-center mb-12">See Vocaldo Transcribe in Action</h2>
         <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
             <div class="mb-6">
                 <audio controls class="w-full">
@@ -93,7 +93,7 @@
             </div>
             <div class="bg-gray-50 p-4 rounded-lg mb-6">
                 <h3 class="text-lg font-semibold mb-2">Sample Transcription:</h3>
-                <p class="mb-2">[00:00:00] Speaker 1: Welcome to Verbatik STT, where we transform your audio into accurate text in any language.</p>
+                <p class="mb-2">[00:00:00] Speaker 1: Welcome to Vocaldo, where we transform your audio into accurate text in any language.</p>
                 <p class="mb-2">[00:00:05] Speaker 2: It's incredible how quick and precise the transcription is, no matter the language!</p>
                 <p>[00:00:10] Speaker 1: Absolutely! And you can start using it for free today.</p>
             </div>
@@ -239,7 +239,7 @@
             <div class="container mx-auto px-4">
                 <div class="grid md:grid-cols-4 gap-8">
                     <div>
-                        <h3 class="text-lg font-semibold mb-4">Verbatik STT</h3>
+                        <h3 class="text-lg font-semibold mb-4">Vocaldo</h3>
                         <p>Revolutionizing speech-to-text with AI</p>
                     </div>
                     <div>
@@ -266,7 +266,7 @@
                     </div>
                 </div>
                 <div class="mt-8 pt-8 border-t border-gray-700 text-center">
-                    <p>&copy; 2024 Verbatik. All rights reserved.</p>
+                    <p>&copy; 2024 Verbatik Technologies Limited. All rights reserved.</p>
                 </div>
             </div>
         </footer>

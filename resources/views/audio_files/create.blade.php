@@ -35,7 +35,7 @@
                             </div>
                             <div class="flex items-center justify-between mt-8">
                                 <div class="text-sm">
-                                    <a href="#" class="font-medium text-blue-600 hover:text-blue-500">
+                                    <a href="mailto:support@verbatik.com" class="font-medium text-blue-600 hover:text-blue-500">
                                         Need help?
                                     </a>
                                 </div>
