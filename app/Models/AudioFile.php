@@ -11,9 +11,9 @@ class AudioFile extends Model
 
     protected $fillable = [
         'user_id', 'file_name', 'file_path', 'transcription', 'srt_path', 'vtt_path',
-        'summary', 'translation', 'translation_language', 'translated_srt_path', 'translated_vtt_path'
+        'summary', 'translation', 'translation_language', 'translated_srt_path', 'translated_vtt_path',
+        'title'
     ];
-
     public function user()
     {
         return $this->belongsTo(User::class);

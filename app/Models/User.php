@@ -21,6 +21,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'is_subscriber',
         'daily_generations',
         'generations_reset_at',
+        'stripe_id',
     ];
 
     protected $hidden = [

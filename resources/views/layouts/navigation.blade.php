@@ -26,9 +26,18 @@
                     </div>
                 @endauth
 
-                <a href="{{ route('upgrade') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
-                    {{ __('Upgrade') }}
-                </a>
+                @auth
+                    @if(Auth::user()->is_subscriber)
+                        <a href="{{ route('billing.portal') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                            {{ __('Billing') }}
+                        </a>
+                    @else
+                        <a href="{{ route('upgrade') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                            {{ __('Upgrade') }}
+                        </a>
+                    @endif
+                @endauth
+
 
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -113,15 +122,16 @@
         </div>
 
         @auth
-            <div class="pt-2 pb-3 px-4">
-                <div class="text-sm text-gray-500">
-                    <span>Remaining: </span>
-                    <span class="font-semibold text-blue-600">{{ $remainingGenerations }}</span>
-                </div>
-                <a href="{{ route('upgrade') }}" class="mt-3 block w-full px-4 py-2 border border-transparent text-center font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
-                    {{ __('Upgrade') }}
-                </a>
-            </div>
-        @endauth
+                    @if(Auth::user()->is_subscriber)
+                        <a href="{{ route('billing.portal') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                            {{ __('Billing') }}
+                        </a>
+                    @else
+                        <a href="{{ route('upgrade') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                            {{ __('Upgrade') }}
+                        </a>
+                    @endif
+                @endauth
+
     </div>
 </nav>

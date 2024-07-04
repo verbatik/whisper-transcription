@@ -79,10 +79,14 @@ class AudioFileController extends Controller
         $vttFileName = pathinfo($fileName, PATHINFO_FILENAME) . '.vtt';
         Storage::disk('public')->put('transcriptions/' . $vttFileName, $vttContent);
 
+        // Generate title
+        $title = $this->generateTitle($transcription);
+
         $audioFile->update([
             'transcription' => $transcription,
             'srt_path' => 'transcriptions/' . $srtFileName,
             'vtt_path' => 'transcriptions/' . $vttFileName,
+            'title' => $title,
         ]);
 
         $user->incrementDailyGenerations();
@@ -100,8 +104,8 @@ class AudioFileController extends Controller
         $summary = OpenAI::chat()->create([
             'model' => 'gpt-3.5-turbo',
             'messages' => [
-                ['role' => 'system', 'content' => 'You are a helpful assistant that summarizes transcriptions in the language transcription has been provided.'],
-                ['role' => 'user', 'content' => "Please summarize the following transcription in a concise paragraph keep the same language, don't translate to other english:\n\n" . $audioFile->transcription],
+                ['role' => 'system', 'content' => 'You are a helpful assistant that summarizes transcriptions.'],
+                ['role' => 'user', 'content' => "Please summarize the following transcription in a concise paragraph:\n\n" . $audioFile->transcription],
             ],
         ])->choices[0]->message->content;
 
@@ -121,7 +125,7 @@ class AudioFileController extends Controller
         $translation = OpenAI::chat()->create([
             'model' => 'gpt-3.5-turbo',
             'messages' => [
-                ['role' => 'system', 'content' => "You are a helpful assistant that translates text to {$targetLanguage} only provide translated output don't write any other text and don't change it, don't add the timestamps"],
+                ['role' => 'system', 'content' => "You are a helpful assistant that translates text to {$targetLanguage}."],
                 ['role' => 'user', 'content' => "Please translate the following text to {$targetLanguage}:\n\n" . $audioFile->transcription],
             ],
         ])->choices[0]->message->content;
@@ -245,5 +249,18 @@ class AudioFileController extends Controller
         }
         
         return $translatedVttContent;
+    }
+
+    private function generateTitle($transcription)
+    {
+        $response = OpenAI::chat()->create([
+            'model' => 'gpt-3.5-turbo',
+            'messages' => [
+                ['role' => 'system', 'content' => 'You are a helpful assistant that generates concise titles.'],
+                ['role' => 'user', 'content' => "Please generate a short, descriptive title (max 10 words) for the following transcription:\n\n" . $transcription],
+            ],
+        ]);
+
+        return trim($response->choices[0]->message->content);
     }
 }

@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\StripeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UpgradeController;
+use App\Http\Controllers\BillingController;
 
 Route::get('/', [LandingPageController::class, 'index'])->name('landing');
 
@@ -45,6 +46,7 @@ Route::middleware(['auth'])->group(function () {
     })->name('verification.notice');
 
     Route::get('/email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
+    Route::get('/billing/portal', [BillingController::class, 'createPortalSession'])->name('billing.portal');
 
     Route::post('/email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 });
