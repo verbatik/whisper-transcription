@@ -9,6 +9,11 @@
 
     <div class="py-12 bg-gray-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+               <!-- Launch Discount Banner -->
+               <div class="bg-yellow-400 text-black p-4 rounded-lg text-center mb-8">
+                <p class="font-bold text-xl">🚀 Launch Discount: 30% OFF for Early Birds!</p>
+                <p>Use coupon code BIRDS30 at checkout to save big!</p>
+            </div>
             <div class="bg-white overflow-hidden shadow-xl rounded-lg">
                 <div class="p-8">
                     <div class="text-center mb-8">
