@@ -15,7 +15,7 @@ class StripeController extends Controller
         $user = auth()->user();
 
         $session = Session::create([
-            'payment_method_types' => ['card'],
+            'payment_method_types' => ['card', 'paypal' ],
             'customer_email' => $user->email, // Preset the user's email
             'line_items' => [[
                 'price_data' => [
