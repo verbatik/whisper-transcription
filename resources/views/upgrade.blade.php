@@ -3,8 +3,6 @@
         <h2 class="font-bold text-3xl text-blue-800 leading-tight">
             {{ __('Unlock Unlimited Transcriptions') }}
         </h2>
-
-
     </x-slot>
 
     @section('title', 'Vocaldo - Upgrade Now')
@@ -14,7 +12,7 @@
             <div class="bg-white overflow-hidden shadow-xl rounded-lg">
                 <div class="p-8">
                     <div class="text-center mb-8">
-                        <h3 class="text-3xl font-bold text-gray-900 mb-4">Upgrade to Unlimited for Just $49!</h3>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">Upgrade to Unlimited for Just $29!</h3>
                         <p class="text-xl text-gray-600">Transform your workflow with unlimited transcriptions.</p>
                     </div>
 
@@ -47,7 +45,6 @@
                                     <svg class="h-5 w-5 text-blue-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                                     <span>Boost productivity with unlimited access</span>
                                 </li>
-
                                 <li class="flex items-start">
                                     <svg class="h-5 w-5 text-blue-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                                     <span>Remove Vocaldo Watermark</span>
@@ -65,14 +62,33 @@
                     </div>
 
                     <div class="text-center">
-                        <p class="text-2xl font-bold text-gray-800 mb-6">One-time payment of just $49 for lifetime access!</p>
-                        <form action="{{ route('stripe.create-checkout-session') }}" method="POST">
+                        <p class="text-2xl font-bold text-gray-800 mb-6">One-time payment of just $29 for lifetime access!</p>
+                        <form action="{{ route('stripe.create-checkout-session') }}" method="POST" class="space-y-4">
                             @csrf
+                            <div class="max-w-xs mx-auto">
+                                <label for="promo_code" class="block text-sm font-medium text-gray-700">Have a promo code? <br> Apply at Checkout</label>
+                            </div>
                             <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                                 Upgrade Now and Unlock Unlimited Transcriptions
                             </button>
                         </form>
                         <p class="mt-4 text-sm text-gray-600">Secure payment processed by Stripe. 3-day money-back guarantee.</p>
+                    </div>
+
+                    <!-- Social Proof 
+                    <div class="mt-12">
+                        <h4 class="text-xl font-semibold text-center mb-4">Trusted by Industry Leaders</h4>
+                        <div class="flex justify-center space-x-8">
+                            <img src="{{ asset('img/company-logo-1.png') }}" alt="Company 1" class="h-8">
+                            <img src="{{ asset('img/company-logo-2.png') }}" alt="Company 2" class="h-8">
+                            <img src="{{ asset('img/company-logo-3.png') }}" alt="Company 3" class="h-8">
+                        </div>
+                    </div> -->
+
+                    <!-- Testimonial 
+                    <div class="mt-12 bg-gray-50 p-6 rounded-lg">
+                        <p class="text-lg italic text-gray-700">"Vocaldo's unlimited plan has revolutionized our workflow. We've increased our productivity by 300% since upgrading!"</p>
+                        <p class="mt-2 font-semibold">- John Doe, CEO of TechCorp</p> -->
                     </div>
                 </div>
             </div>

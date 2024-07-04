@@ -87,12 +87,63 @@ class AudioFileController extends Controller
 
         $user->incrementDailyGenerations();
 
-        return redirect()->route('audio_files.index')->with('success', 'Audio file uploaded and transcribed successfully.');
+        return redirect()->route('audio_files.show', $audioFile)->with('success', 'Audio file uploaded and transcribed successfully.');
     }
 
     public function show(AudioFile $audioFile)
     {
         return view('audio_files.show', compact('audioFile'));
+    }
+
+    public function generateSummary(AudioFile $audioFile)
+    {
+        $summary = OpenAI::chat()->create([
+            'model' => 'gpt-3.5-turbo',
+            'messages' => [
+                ['role' => 'system', 'content' => 'You are a helpful assistant that summarizes transcriptions in the language transcription has been provided.'],
+                ['role' => 'user', 'content' => "Please summarize the following transcription in a concise paragraph keep the same language, don't translate to other english:\n\n" . $audioFile->transcription],
+            ],
+        ])->choices[0]->message->content;
+
+        $audioFile->update(['summary' => $summary]);
+
+        return redirect()->route('audio_files.show', $audioFile)->with('success', 'Summary generated successfully.');
+    }
+
+    public function translate(AudioFile $audioFile, Request $request)
+    {
+        $request->validate([
+            'target_language' => 'required|string|max:50',
+        ]);
+
+        $targetLanguage = $request->input('target_language');
+
+        $translation = OpenAI::chat()->create([
+            'model' => 'gpt-3.5-turbo',
+            'messages' => [
+                ['role' => 'system', 'content' => "You are a helpful assistant that translates text to {$targetLanguage} only provide translated output don't write any other text and don't change it, don't add the timestamps"],
+                ['role' => 'user', 'content' => "Please translate the following text to {$targetLanguage}:\n\n" . $audioFile->transcription],
+            ],
+        ])->choices[0]->message->content;
+
+        // Generate SRT file for translation
+        $translatedSrtContent = $this->generateTranslatedSrtContent($audioFile, $translation);
+        $translatedSrtFileName = pathinfo($audioFile->file_name, PATHINFO_FILENAME) . "_{$targetLanguage}.srt";
+        Storage::disk('public')->put('translations/' . $translatedSrtFileName, $translatedSrtContent);
+
+        // Generate VTT file for translation
+        $translatedVttContent = $this->generateTranslatedVttContent($audioFile, $translation);
+        $translatedVttFileName = pathinfo($audioFile->file_name, PATHINFO_FILENAME) . "_{$targetLanguage}.vtt";
+        Storage::disk('public')->put('translations/' . $translatedVttFileName, $translatedVttContent);
+
+        $audioFile->update([
+            'translation' => $translation,
+            'translation_language' => $targetLanguage,
+            'translated_srt_path' => 'translations/' . $translatedSrtFileName,
+            'translated_vtt_path' => 'translations/' . $translatedVttFileName,
+        ]);
+
+        return redirect()->route('audio_files.show', $audioFile)->with('success', "Translation to {$targetLanguage} generated successfully.");
     }
 
     private function generateSrtContent($segments, $user)
@@ -148,5 +199,51 @@ class AudioFileController extends Controller
             return sprintf('%02d:%02d:%02d,%03d', $hours, $minutes, floor($secs), ($secs - floor($secs)) * 1000);
         }
         return sprintf('%02d:%02d:%06.3f', $hours, $minutes, $secs);
+    }
+
+    private function generateTranslatedSrtContent(AudioFile $audioFile, $translation)
+    {
+        $originalSrtContent = Storage::disk('public')->get($audioFile->srt_path);
+        $srtLines = explode("\n", $originalSrtContent);
+        $translatedLines = explode("\n", $translation);
+        
+        $translatedSrtContent = '';
+        $lineIndex = 0;
+        
+        foreach ($srtLines as $line) {
+            if (preg_match('/^\d+$/', $line) || preg_match('/^\d{2}:\d{2}:\d{2},\d{3} --> \d{2}:\d{2}:\d{2},\d{3}$/', $line)) {
+                $translatedSrtContent .= $line . "\n";
+            } elseif (trim($line) !== '') {
+                $translatedSrtContent .= $translatedLines[$lineIndex] . "\n";
+                $lineIndex++;
+            } else {
+                $translatedSrtContent .= "\n";
+            }
+        }
+        
+        return $translatedSrtContent;
+    }
+
+    private function generateTranslatedVttContent(AudioFile $audioFile, $translation)
+    {
+        $originalVttContent = Storage::disk('public')->get($audioFile->vtt_path);
+        $vttLines = explode("\n", $originalVttContent);
+        $translatedLines = explode("\n", $translation);
+        
+        $translatedVttContent = "WEBVTT\n\n";
+        $lineIndex = 0;
+        
+        foreach ($vttLines as $line) {
+            if ($line === "WEBVTT" || preg_match('/^\d{2}:\d{2}:\d{2}\.\d{3} --> \d{2}:\d{2}:\d{2}\.\d{3}$/', $line)) {
+                $translatedVttContent .= $line . "\n";
+            } elseif (trim($line) !== '') {
+                $translatedVttContent .= $translatedLines[$lineIndex] . "\n";
+                $lineIndex++;
+            } else {
+                $translatedVttContent .= "\n";
+            }
+        }
+        
+        return $translatedVttContent;
     }
 }

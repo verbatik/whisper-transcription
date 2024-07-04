@@ -128,7 +128,7 @@
                     </div>
                     <div class="bg-blue-600 text-white p-8 rounded-lg shadow-lg w-full md:w-80">
                         <h3 class="text-2xl font-bold mb-4">Unlimited</h3>
-                        <p class="text-4xl font-bold mb-6">$49<span class="text-lg font-normal">/forever</span></p>
+                        <p class="text-4xl font-bold mb-6">$29<span class="text-lg font-normal">/forever</span></p>
                         <ul class="mb-8 space-y-2">
                             <li>✅ Unlimited SRT transcription</li>
                             <li>✅ All language support</li>

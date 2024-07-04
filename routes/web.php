@@ -35,6 +35,9 @@ Route::get('auth/callback', [GoogleController::class, 'handleGoogleCallback']);
 
 Route::get('/upgrade', [UpgradeController::class, 'show'])->name('upgrade');
 
+Route::post('/audio-files/{audioFile}/generate-summary', [AudioFileController::class, 'generateSummary'])->name('audio_files.generate-summary');
+Route::post('/audio-files/{audioFile}/translate', [AudioFileController::class, 'translate'])->name('audio_files.translate');
+
 // Email Verification Routes (only for standard email registration)
 Route::middleware(['auth'])->group(function () {
     Route::get('/email/verify', function () {

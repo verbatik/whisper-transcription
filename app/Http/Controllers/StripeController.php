@@ -12,21 +12,29 @@ class StripeController extends Controller
     {
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
+        $user = auth()->user();
+
         $session = Session::create([
             'payment_method_types' => ['card'],
+            'customer_email' => $user->email, // Preset the user's email
             'line_items' => [[
                 'price_data' => [
                     'currency' => 'usd',
                     'product_data' => [
                         'name' => 'Unlimited Transcriptions',
+                        'description' => 'Lifetime access to unlimited transcriptions with Vocaldo',
                     ],
-                    'unit_amount' => 4900, // $49.00
+                    'unit_amount' => 2900, // $29.00
                 ],
                 'quantity' => 1,
             ]],
             'mode' => 'payment',
+            'allow_promotion_codes' => true, // Enable promo code field
             'success_url' => route('stripe.success'),
             'cancel_url' => route('stripe.cancel'),
+            'metadata' => [
+                'user_id' => $user->id,
+            ],
         ]);
 
         return redirect($session->url);
