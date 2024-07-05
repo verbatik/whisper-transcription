@@ -24,6 +24,15 @@
 </script>
 
 
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "n2ihhkqeqd");
+</script>
+
 </head>
 <body class="antialiased bg-gray-50 text-gray-800">
     <!-- Launch Discount Banner -->
@@ -50,7 +59,6 @@
         </header>
 
         <main class="flex-grow">
-       <!-- Hero Section -->
 <!-- Hero Section -->
 <section class="gradient-bg text-white py-20">
     <div class="container mx-auto px-4">
@@ -62,11 +70,18 @@
                     <a href="{{ route('register') }}" class="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full text-lg transition hover-scale inline-block">Start Transcribing for Free</a>
                     <a href="#demo" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 font-bold py-3 px-8 rounded-full text-lg transition hover-scale inline-block">See Demo</a>
                 </div>
-                
+                <div class="flex items-center mb-6">
+                   
+                </div>
+                <div class="mt-4">
+                    <a href="https://www.producthunt.com/posts/vocaldo-ai?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-vocaldo&#0045;ai" target="_blank" rel="noopener noreferrer">
+                        <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=468566&theme=neutral" alt="Vocaldo&#0032;AI - Trabscribe&#0032;and&#0032;export&#0032;to&#0032;VTT&#0032;and&#0032;SRT&#0032;for&#0032;FREE | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
+                    </a>
+                </div>
             </div>
             <div class="w-full lg:w-5/12">
-                <div class="relative rounded-lg overflow-hidden shadow-2xl" style="padding-top: 56.25%">
-                    <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/your-demo-video-id" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <div class="rounded-lg overflow-hidden shadow-2xl">
+                    <img src="/img/head.png" alt="Vocaldo AI Transcription Demo" class="w-full h-auto object-cover" />
                 </div>
             </div>
         </div>
@@ -158,68 +173,112 @@
             </section>
 
             
-
             <section id="features" class="py-20 bg-white">
-                <div class="container mx-auto px-4">
-                    <h2 class="text-4xl font-bold text-center mb-12">Why Choose Vocaldo?</h2>
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale">
-                            <div class="text-blue-600 text-4xl mb-4">🌍</div>
-                            <h3 class="text-xl font-semibold mb-2">Multi-Language Support</h3>
-                            <p>Transcribe audio in over 100 languages with high accuracy.</p>
-                        </div>
-                        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale">
-                            <div class="text-blue-600 text-4xl mb-4">⚡</div>
-                            <h3 class="text-xl font-semibold mb-2">Lightning-Fast Results</h3>
-                            <p>Get your transcriptions in minutes, not hours.</p>
-                        </div>
-                        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale">
-                            <div class="text-blue-600 text-4xl mb-4">💯</div>
-                            <h3 class="text-xl font-semibold mb-2">Unmatched Accuracy</h3>
-                            <p>AI-powered engine ensures reliable and precise transcripts.</p>
-                        </div>
-                        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale">
-                            <div class="text-blue-600 text-4xl mb-4">🆓</div>
-                            <h3 class="text-xl font-semibold mb-2">Free to Use</h3>
-                            <p>Start transcribing immediately with our free tier.</p>
-                        </div>
-                        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale">
-                            <div class="text-blue-600 text-4xl mb-4">📄</div>
-                            <h3 class="text-xl font-semibold mb-2">Multiple Formats</h3>
-                            <p>Download transcripts in TXT, SRT, or VTT formats.</p>
-                        </div>
-                        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale">
-                            <div class="text-blue-600 text-4xl mb-4">🔒</div>
-                            <h3 class="text-xl font-semibold mb-2">Secure & Confidential</h3>
-                            <p>Your audio files and transcripts are always protected.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">Why Choose Vocaldo?</h2>
+        <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale">
+                <div class="text-blue-600 text-4xl mb-4">🌍</div>
+                <h3 class="text-xl font-semibold mb-2">Multi-Language Support</h3>
+                <p>Transcribe audio in over 100 languages with high accuracy.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale">
+                <div class="text-blue-600 text-4xl mb-4">⚡</div>
+                <h3 class="text-xl font-semibold mb-2">Lightning-Fast Results</h3>
+                <p>Get your transcriptions in minutes, not hours.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale">
+                <div class="text-blue-600 text-4xl mb-4">💯</div>
+                <h3 class="text-xl font-semibold mb-2">Unmatched Accuracy</h3>
+                <p>AI-powered engine ensures reliable and precise transcripts.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale">
+                <div class="text-blue-600 text-4xl mb-4">📝</div>
+                <h3 class="text-xl font-semibold mb-2">Summary Generation</h3>
+                <p>Get concise summaries of your transcribed content automatically.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale">
+                <div class="text-blue-600 text-4xl mb-4">🔄</div>
+                <h3 class="text-xl font-semibold mb-2">Translate to Any Language</h3>
+                <p>Easily translate your transcriptions into multiple languages.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale">
+                <div class="text-blue-600 text-4xl mb-4">📄</div>
+                <h3 class="text-xl font-semibold mb-2">Multiple Formats</h3>
+                <p>Download transcripts and translations in TXT, SRT, or VTT formats.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale">
+                <div class="text-blue-600 text-4xl mb-4">🔒</div>
+                <h3 class="text-xl font-semibold mb-2">Secure & Confidential</h3>
+                <p>Your audio files and transcripts are always protected.</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale">
+                <div class="text-blue-600 text-4xl mb-4">🆓</div>
+                <h3 class="text-xl font-semibold mb-2">Free Tier Available</h3>
+                <p>Start transcribing immediately with our feature-rich free plan.</p>
+            </div>
+        </div>
+    </div>
+</section>
             <section id="demo" class="py-20 bg-gray-100">
     <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-bold text-center mb-12">See Vocaldo Transcribe in Action</h2>
+        <h2 class="text-4xl font-bold text-center mb-12">Experience Vocaldo's Precision in Action</h2>
         <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
             <div class="mb-6">
                 <audio controls class="w-full">
-                    <source src="/path/to/sample-audio.mp3" type="audio/mpeg">
+                    <source src="/img/demo.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
             </div>
-            <div class="bg-gray-50 p-4 rounded-lg mb-6">
-                <h3 class="text-lg font-semibold mb-2">Sample Transcription:</h3>
-                <p class="mb-2">[00:00:00] Speaker 1: Welcome to Vocaldo, where we transform your audio into accurate text in any language.</p>
-                <p class="mb-2">[00:00:05] Speaker 2: It's incredible how quick and precise the transcription is, no matter the language!</p>
-                <p>[00:00:10] Speaker 1: Absolutely! And you can start using it for free today.</p>
+            <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                <h3 class="text-xl font-semibold mb-4">Sample Transcription:</h3>
+                <div class="space-y-3 text-sm md:text-base">
+                <p>    [00:00:00.000 - 00:00:05.000]  Welcome to Vocaldo, where we transform your audio into accurate text in any language.</p>
+                <p>[00:00:06.000 - 00:00:10.000]  Our AI-powered platform is designed to make transcription effortless and precise.</p>
+                <p>[00:00:11.000 - 00:00:15.000]  It's incredible how quick and accurate the transcription is,</p>
+                <p>[00:00:15.000 - 00:00:20.000]  no matter the language. Can you tell us more about how Vocaldo works?</p>
+                <p>[00:00:20.000 - 00:00:25.000]  Absolutely! Vocaldo uses state-of-the-art machine learning algorithms to analyze audio</p>
+                <p>[00:00:25.000 - 00:00:31.000]  and convert it to text. Our system can handle multiple speakers, various accents,</p>
+                <p>[00:00:31.000 - 00:00:34.000]  and even background noise with remarkable accuracy.</p>
+                <p>[00:00:35.000 - 00:00:39.000]  That's impressive! What about different file formats and languages?</p>
+                <p>[00:00:39.000 - 00:00:44.000]  Great question! Vocaldo supports a wide range of audio and video formats,</p>
+<p>[00:00:44.000 - 00:00:51.000]  including MP3, WAV, MP4, and more. As for languages, we currently support</p>
+<p>[00:00:52.000 - 00:00:57.000]  100 languages and dialects, making it perfect for global content creators and businesses.</p>
+<p>[00:00:58.000 - 00:01:03.000]  Wow! That's versatile! How fast can users expect to get their transcriptions?</p>
+<p>[00:01:03.000 - 00:01:08.000]  Speed is one of our key features. Most transcriptions are completed within minutes,</p>
+<p>[00:01:08.000 - 00:01:15.000]  not hours. For example, a 60-minute audio file typically takes about 5 to 10 minutes to</p>
+<p>[00:01:15.000 - 00:01:22.000]  transcribe, depending on the complexity. That's incredibly fast! What about accuracy and editing</p>
+<p>[00:01:22.000 - 00:01:30.000]  options? Our accuracy rate is consistently above 95% for clear audio. Plus, we offer an intuitive</p>
+<p>[00:01:30.000 - 00:01:36.000]  editor where users can easily review and refine their transcripts. You can adjust timings,</p>
+<p>[00:01:36.000 - 00:01:40.000]  correct any misheard words, and even add speaker labels.</p>
+<p>[00:01:40.000 - 00:01:46.000]  It sounds like Vocaldo has thought of everything. How can people get started?</p>
+<p>[00:01:46.000 - 00:01:52.000]  It's simple. You can start using Vocaldo for free today. Just sign up on our website,</p>
+<p>[00:01:52.000 - 00:01:57.000]  upload your first audio or video file, and experience the power of AI transcription yourself.</p>
+<p>[00:01:58.000 - 00:02:04.000]  We offer 10 free transcriptions per month, with affordable plans for more frequent users.</p>
+
+
+
+
+
+</div>
             </div>
-            <div class="flex justify-center space-x-4 mb-8">
-                <a href="/path/to/sample.srt" download class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition hover-scale">
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
+                <a href="/img/demo.srt" download class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition hover-scale text-center">
                     Download Sample SRT
                 </a>
-                <a href="/path/to/sample.vtt" download class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full transition hover-scale">
+                <a href="/img/demo.vtt" download class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition hover-scale text-center">
                     Download Sample VTT
                 </a>
             </div>
+            <div class="text-center">
+                <p class="text-lg mb-4">Ready to experience Vocaldo's powerful transcription for yourself?</p>
+                <a href="{{ route('register') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition hover-scale inline-block">
+                    Start Your Free Trial Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
             
             <!-- Sign-up options -->
             <div class="mt-8 text-center">
