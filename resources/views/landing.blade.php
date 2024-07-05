@@ -50,16 +50,114 @@
         </header>
 
         <main class="flex-grow">
-        <section class="gradient-bg text-white py-12 md:py-20">
-    <div class="container mx-auto px-4 text-center">
-        <h1 class="text-3xl md:text-5xl font-bold mb-6">Transcribe Speech in Any Language</h1>
-        <p class="text-lg md:text-xl mb-8">Harness the power of AI for accurate, fast, and free speech-to-text conversion in over 100 languages!</p>
-        <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
-            <a href="{{ route('register') }}" class="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full text-lg transition hover-scale">Start Transcribing for Free</a>
-            <a href="#demo" class="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-bold py-3 px-8 rounded-full text-lg transition hover-scale">See Demo</a>
+       <!-- Hero Section -->
+<!-- Hero Section -->
+<section class="gradient-bg text-white py-20">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-wrap items-center justify-between">
+            <div class="w-full lg:w-1/2 lg:pr-12 mb-12 lg:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Transcribe Speech in Any Language with AI</h1>
+                <p class="text-xl mb-8">Vocaldo uses cutting-edge AI to convert speech to text in over 100 languages. Save time and increase productivity with our accurate, fast, and easy-to-use transcription service.</p>
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <a href="{{ route('register') }}" class="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full text-lg transition hover-scale inline-block">Start Transcribing for Free</a>
+                    <a href="#demo" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 font-bold py-3 px-8 rounded-full text-lg transition hover-scale inline-block">See Demo</a>
+                </div>
+                
+            </div>
+            <div class="w-full lg:w-5/12">
+                <div class="relative rounded-lg overflow-hidden shadow-2xl" style="padding-top: 56.25%">
+                    <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/your-demo-video-id" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+
+<!-- Features -->
+<section id="features" class="py-20">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl font-bold text-center mb-12">How Vocaldo Works</h2>
+                    <div class="grid md:grid-cols-4 gap-8">
+                        <div class="text-center">
+                            <div class="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Upload</h3>
+                            <p>Simply upload your audio or video file to our secure platform.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Process</h3>
+                            <p>Our AI analyzes and transcribes your content with high accuracy.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Translate</h3>
+                            <p>Optionally translate your transcription into multiple languages.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-yellow-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Download</h3>
+                            <p>Get your accurate transcription in various formats (TXT, SRT, VTT).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- Transformation -->
+            <section class="py-20 bg-blue-600 text-white">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl font-bold text-center mb-12">Experience the Vocaldo Difference</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white text-gray-800 p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-4 text-blue-600">Where You Want to Be</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Effortlessly transcribe hours of content in minutes</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Achieve 95%+ accuracy in transcriptions</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Expand your reach with multi-language support</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-white text-gray-800 p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-4 text-blue-600">The Benefits You'll Enjoy</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 text-blue-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                    <span>Save countless hours and boost productivity</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 
+                                    <svg class="w-6 h-6 text-blue-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                    <span>Improve communication and reduce misunderstandings</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 text-blue-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                    <span>Expand your global reach and impact</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
 
             <section id="features" class="py-20 bg-white">
                 <div class="container mx-auto px-4">
@@ -143,30 +241,45 @@
     </div>
 </section>
 
-            <section id="how-it-works" class="py-20 bg-white">
+          
+              <!-- Problem Agitation -->
+              <section class="py-20 bg-gray-100">
                 <div class="container mx-auto px-4">
-                    <h2 class="text-4xl font-bold text-center mb-12">How It Works</h2>
-                    <div class="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-12">
-                        <div class="text-center">
-                            <div class="bg-blue-100 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
-                                <svg class="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
-                            </div>
-                            <h3 class="text-xl font-semibold mb-2">1. Upload</h3>
-                            <p>Upload your audio or video file</p>
+                    <h2 class="text-3xl font-bold text-center mb-12">Tired of Wasting Time on Manual Transcription?</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-4">The Struggle is Real</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 text-red-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <span>Hours spent manually transcribing audio and video files</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 text-red-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <span>Inaccurate transcriptions leading to misunderstandings</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 text-red-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <span>Difficulty in handling multiple languages</span>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="text-center">
-                            <div class="bg-green-100 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
-                                <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                            </div>
-                            <h3 class="text-xl font-semibold mb-2">2. Process</h3>
-                            <p>Our AI transcribes the content</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="bg-purple-100 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
-                                <svg class="w-12 h-12 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                            </div>
-                            <h3 class="text-xl font-semibold mb-2">3. Download</h3>
-                            <p>Get your transcript instantly</p>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold mb-4">The Cost of Inaction</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 text-yellow-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                    <span>Missed deadlines and opportunities due to slow transcription process</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 text-yellow-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                    <span>Increased stress and frustration for you and your team</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-6 h-6 text-yellow-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                    <span>Limited global reach due to language barriers</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -205,16 +318,11 @@
             </div>
         </section>
 
-        <!-- Voice Cloning Advertisement -->
-        <section class="py-20 bg-gray-100">
-            <div class="container mx-auto px-4">
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h2 class="text-3xl font-bold mb-6">Discover Verbatik Voice Cloning</h2>
-                    <p class="text-xl mb-6">Take your audio experience to the next level with our cutting-edge voice cloning technology. Create natural-sounding synthetic voices for various applications.</p>
-                    <a href="https://verbatik.com/voice-cloning" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition hover-scale">Learn More</a>
-                </div>
-            </div>
-        </section>
+ 
+
+            
+
+
 
 
         <section class="py-20 bg-blue-600 text-white">
@@ -222,6 +330,18 @@
                     <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Audio?</h2>
                     <p class="text-xl mb-8">Join thousands of satisfied users and start transcribing for free today!</p>
                     <a href="{{ route('register') }}" class="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full text-lg transition hover-scale inline-block">Create Your Free Account</a>
+                </div>
+            </section>
+
+ <!-- About Us -->
+ <section class="py-20 bg-gray-100">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl font-bold text-center mb-12">About Vocaldo</h2>
+                    <div class="max-w-3xl mx-auto">
+                        <p class="text-lg mb-6">Vocaldo was born out of frustration with existing transcription tools. As content creators ourselves, we wanted a faster, more accurate, and user-friendly solution for transcribing audio and video content.</p>
+                        <p class="text-lg mb-6">Our team of AI experts and language enthusiasts worked tirelessly to develop a cutting-edge speech-to-text engine that delivers unparalleled accuracy across multiple languages.</p>
+                        <p class="text-lg mb-6">Since our launch, Vocaldo has been featured in TechCrunch, Product Hunt, and AI News for our innovative approach to transcription. We're proud to have helped thousands of content creators, journalists, and businesses streamline their workflows and reach global audiences.</p>
+                    </div>
                 </div>
             </section>
 
@@ -250,6 +370,26 @@
             </div>
         </section>
 
+        <section class="py-20 bg-blue-600 text-white">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Transcription Workflow?</h2>
+                    <p class="text-xl mb-8">Join thousands of satisfied users and start transcribing smarter, faster, and more accurately today!</p>
+                    <a href="{{ route('register') }}" class="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full text-lg transition hover-scale inline-block">Get Started for Free</a>
+                    <p class="mt-4 text-sm">No credit card required. Start with 10 free transcriptions per day.</p>
+                </div>
+            </section>
+
+
+        <!-- Voice Cloning Advertisement -->
+        <section class="py-20 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h2 class="text-3xl font-bold mb-6">Discover Verbatik Voice Cloning</h2>
+                    <p class="text-xl mb-6">Take your audio experience to the next level with our cutting-edge voice cloning technology. Create natural-sounding synthetic voices for various applications.</p>
+                    <a href="https://verbatik.com/voice-cloning" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition hover-scale">Learn More</a>
+                </div>
+            </div>
+        </section>
 
 
         </main>
