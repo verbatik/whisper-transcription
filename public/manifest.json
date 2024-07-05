@@ -1,0 +1,31 @@
+{
+    "background_color": "#ffffff",
+    "dir": "ltr",
+    "display": "standalone",
+    "name": "Vocaldo",
+    "orientation": "any",
+    "scope": "/",
+    "short_name": "Vocaldo",
+    "start_url": "/dashboard",
+    "theme_color": "#ffffff",
+    "icons": [
+      {
+        "src": "/favicon.ico",
+        "type": "image/x-icon"
+      }
+    ],
+    "id": "voc122",
+    "description": "Vocaldo is an AI-powered speech-to-text and transcription tool that we believe will complement your experience with Verbatik perfectly. Here's why we think you'll love it:\n🌍 Transcribe in 100+ Languages: Accurate speech-to-text conversion for a global audience.\n⚡ Lightning-Fast Results: Get your transcriptions in minutes, not hours.\n💯 Unmatched Accuracy: Our AI engine ensures reliable and precise transcripts.\n📄 Multiple Formats: Download your transcripts in TXT, SRT, or VTT formats.\n🔒 Secure &amp; Confidential: Your audio files and transcripts are always protected.\nThe best part? Vocaldo is practically free to use! We're offering a generous free tier that includes:\n\n10 transcriptions per day\nUp to 120 minutes of total audio length\nSupport for all languages\n\nThis free tier comes with a small Vocaldo watermark, which helps us share and grow the product. For most users, this free tier will be more than enough to meet their transcription needs.",
+    "lang": "en",
+    "display_override": [
+      "window-controls-overlay",
+      "fullscreen",
+      "standalone"
+    ],
+    "categories": [
+      "books",
+      "entertainment",
+      "productivity",
+      "utilities"
+    ]
+  }

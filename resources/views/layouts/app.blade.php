@@ -7,9 +7,20 @@
 
         <title>@yield('title', 'Vocaldo')</title>
 
+
+        <!-- PWA Meta Tags -->
+        <meta name="theme-color" content="#4F46E5">
+        <link rel="manifest" href="{{ asset('manifest.json') }}">
+        <link rel="apple-touch-icon" href="{{ asset('icons/192.png') }}">
+
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+
+
+
 
         <!-- Scripts -->
         <!-- Google tag (gtag.js) -->
@@ -22,6 +33,18 @@
           gtag('config', 'G-55M3QDFSWB');
         </script>
         
+         <!-- PWA Service Worker Registration -->
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+                });
+            }
+        </script>
 
 
         <script type="text/javascript">
