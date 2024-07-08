@@ -49,7 +49,7 @@
         <a href="#features" class="text-gray-600 hover:text-blue-600 transition">Features</a>
         <a href="{{ route('srt.landing') }}" class="text-gray-600 hover:text-blue-600 transition">SRT Generator</a>
         <a href="{{ route('vtt.landing') }}" class="text-gray-600 hover:text-blue-600 transition">VTT Generator</a>
-        <a href="#how-it-works" class="text-gray-600 hover:text-blue-600 transition">How It Works</a>
+        <a href="#pricing" class="text-gray-600 hover:text-blue-600 transition">Pricing</a>
         <a href="{{ route('login') }}" class="text-blue-600 hover:text-blue-800 font-semibold">Log In</a>
         <a href="{{ route('register') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition mt-2 md:mt-0">Get Started Free</a>
     </div>
