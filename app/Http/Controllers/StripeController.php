@@ -10,8 +10,7 @@ class StripeController extends Controller
 {
     public function createCheckoutSession(Request $request)
     {
-        Stripe::setApiKey(env('STRIPE_SECRET'));
-
+        Stripe::setApiKey(config('services.stripe.secret'));
         $user = auth()->user();
 
         $session = Session::create([
