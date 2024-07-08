@@ -23,7 +23,24 @@
   gtag('config', 'G-55M3QDFSWB');
 </script>
 
+ <!-- PWA Meta Tags -->
+ <meta name="theme-color" content="#4F46E5">
+        <link rel="manifest" href="{{ asset('manifest.json') }}">
+        <link rel="apple-touch-icon" href="{{ asset('icons/192.png') }}">
 
+
+ <!-- PWA Service Worker Registration -->
+ <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+                });
+            }
+        </script>
 
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
