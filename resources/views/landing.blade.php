@@ -81,7 +81,9 @@
             </div>
             <div class="w-full lg:w-5/12">
                 <div class="rounded-lg overflow-hidden shadow-2xl">
-                    <img src="/img/head.png" alt="Vocaldo AI Transcription Demo" class="w-full h-auto object-cover" />
+                <a href="{{ route('register') }}">
+                        <img src="/img/head.png" alt="Vocaldo AI Transcription Demo" class="w-full h-auto object-cover" />
+                    </a>
                 </div>
             </div>
         </div>
