@@ -39,18 +39,17 @@ Route::get('/upgrade', [UpgradeController::class, 'show'])->name('upgrade');
 
 Route::post('/audio-files/{audioFile}/generate-summary', [AudioFileController::class, 'generateSummary'])->name('audio_files.generate-summary');
 Route::post('/audio-files/{audioFile}/translate', [AudioFileController::class, 'translate'])->name('audio_files.translate');
+Route::get('/billing/portal', [BillingController::class, 'createPortalSession'])->name('billing.portal');
 
-// Email Verification Routes (only for standard email registration)
-Route::middleware(['auth'])->group(function () {
-    Route::get('/email/verify', function () {
-        return view('auth.verify-email');
-    })->name('verification.notice');
+// Remove or comment out these lines as they're already in auth.php
+// Route::get('/email/verify', function () {
+//     return view('auth.verify-email');
+// })->name('verification.notice');
 
-    Route::get('/email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
-    Route::get('/billing/portal', [BillingController::class, 'createPortalSession'])->name('billing.portal');
+// Route::get('/email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
+// Route::post('/email/resend', 'Auth\VerificationController@resend')->name('verification.resend'); si resend pe aici
 
-    Route::post('/email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
-});
+
 
 
 // Sitemap route
