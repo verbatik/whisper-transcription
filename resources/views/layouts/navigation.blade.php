@@ -1,7 +1,7 @@
-<nav x-data="{ open: false }" class="bg-white shadow-sm">
+<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 shadow-sm">
 @auth
         @if(!auth()->user()->is_subscriber)
-            <div class="bg-yellow-400 text-black py-2 text-center">
+            <div class="bg-yellow-400 dark:bg-dark-blue-400 text-black dark:text-white py-2 text-center">
                 <p class="font-bold">🚀 Launch Discount: 30% OFF for Early Birds! Use coupon code BIRDS30 at checkout.</p>
             </div>
         @endif
@@ -11,11 +11,9 @@
             <div class="flex items-center">
                 <a href="{{ route('dashboard') }}" class="flex-shrink-0 flex items-center">
                     <img src="{{ asset('img/logo.svg') }}" alt="Application Logo" class="h-8 w-auto">
-                    <span class="text-xl font-semibold text-blue-600 ml-2">Vocaldo</span>
+                    <span class="text-xl font-semibold text-blue-600 dark:text-blue-400 ml-2">Vocaldo</span>
                 </a>
                 <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-
-                 
                     <x-nav-link :href="route('audio_files.index')" :active="request()->routeIs('audio_files.index')" class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium leading-5 transition duration-150 ease-in-out">
                         {{ __('History') }}
                     </x-nav-link>
@@ -27,24 +25,23 @@
 
             <div class="hidden sm:flex sm:items-center sm:ml-6 space-x-4">
                 @auth
-                    <div class="text-sm text-gray-500">
+                    <div class="text-sm text-gray-500 dark:text-gray-400">
                         <span>Remaining: </span>
-                        <span class="font-semibold text-blue-600">{{ $remainingGenerations }}</span>
+                        <span class="font-semibold text-blue-600 dark:text-blue-400">{{ $remainingGenerations }}</span>
                     </div>
                 @endauth
 
                 @auth
                     @if(Auth::user()->is_subscriber)
-                        <a href="{{ route('billing.portal') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                        <a href="{{ route('billing.portal') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
                             {{ __('Billing') }}
                         </a>
                     @else
-                        <a href="{{ route('upgrade') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                        <a href="{{ route('upgrade') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
                             {{ __('Upgrade') }}
                         </a>
                     @endif
                 @endauth
-
 
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
