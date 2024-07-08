@@ -1,9 +1,14 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Vocaldo</title>
+    <meta description="Log in to your Vocaldo account to access AI-powered audio transcription, translation, and summarization tools.">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { background-color: #f0f4f8; }

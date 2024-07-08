@@ -7,6 +7,10 @@
 
         <title>{{ config('app.name', 'Vocaldo') }}</title>
 
+
+         <!-- Meta Description -->
+       <meta name="description" content="@yield('meta_description', 'Vocaldo - AI-powered audio transcription service. Convert speech to text quickly and accurately.')">
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />

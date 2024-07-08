@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reset Password - Vocaldo</title>
+    <meta description="Forgot your Vocaldo password? No worries. Reset it here and regain access to your AI-powered audio transcription account.">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { background-color: #f0f4f8; }

@@ -9,6 +9,7 @@ use App\Http\Controllers\StripeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UpgradeController;
 use App\Http\Controllers\BillingController;
+use App\Http\Controllers\SitemapController;
 
 Route::get('/', [LandingPageController::class, 'index'])->name('landing');
 
@@ -50,5 +51,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 });
+
+
+// Sitemap route
+Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
 require __DIR__.'/auth.php';
