@@ -50,6 +50,7 @@
         <a href="{{ route('srt.landing') }}" class="text-gray-600 hover:text-blue-600 transition">SRT Generator</a>
         <a href="{{ route('vtt.landing') }}" class="text-gray-600 hover:text-blue-600 transition">VTT Generator</a>
         <a href="#pricing" class="text-gray-600 hover:text-blue-600 transition">Pricing</a>
+        <a href="/transcribe" class="hover:text-blue-400 transition">Languages</a>
         <a href="{{ route('login') }}" class="text-blue-600 hover:text-blue-800 font-semibold">Log In</a>
         <a href="{{ route('register') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition mt-2 md:mt-0">Get Started Free</a>
     </div>
@@ -176,6 +177,8 @@
                     <ul>
                         <li><a href="#features" class="hover:text-blue-400">Features</a></li>
                         <li><a href="#pricing" class="hover:text-blue-400">Pricing</a></li>
+                        <li><a href="/transcribe" class="hover:text-blue-400 transition">Languages</a></li>
+
                         <li><a href="#" class="hover:text-blue-400">FAQs</a></li>
                     </ul>
                 </div>
