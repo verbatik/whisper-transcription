@@ -37,6 +37,9 @@ Route::get('auth/callback', [GoogleController::class, 'handleGoogleCallback']);
 
 Route::get('/upgrade', [UpgradeController::class, 'show'])->name('upgrade');
 
+
+
+
 Route::post('/audio-files/{audioFile}/generate-summary', [AudioFileController::class, 'generateSummary'])->name('audio_files.generate-summary');
 Route::post('/audio-files/{audioFile}/translate', [AudioFileController::class, 'translate'])->name('audio_files.translate');
 Route::get('/billing/portal', [BillingController::class, 'createPortalSession'])->name('billing.portal');
@@ -49,6 +52,8 @@ Route::get('/billing/portal', [BillingController::class, 'createPortalSession'])
 // Route::get('/email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
 // Route::post('/email/resend', 'Auth\VerificationController@resend')->name('verification.resend'); si resend pe aici
 
+Route::get('/transcribe-{language}', [LandingPageController::class, 'languageLanding'])->name('language.landing');
+Route::get('/transcribe', [LandingPageController::class, 'languageList'])->name('language.list');
 
 
 
