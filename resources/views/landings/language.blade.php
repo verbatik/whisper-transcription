@@ -146,9 +146,9 @@
                 <div class="flex flex-wrap justify-center gap-8">
                     <div class="bg-white p-8 rounded-lg shadow-lg hover-scale w-full md:w-80">
                         <h3 class="text-2xl font-bold mb-4">Free Trial</h3>
-                        <p class="text-4xl font-bold mb-6">$0<span class="text-lg font-normal">/10 minutes</span></p>
+                        <p class="text-4xl font-bold mb-6">$0<span class="text-lg font-normal">/forever</span></p>
                         <ul class="mb-8 space-y-2">
-                            <li>✅ 10 minutes of {{ $languageName }} transcription</li>
+                            <li>✅ 10 {{ $languageName }} transcription per day</li>
                             <li>✅ Basic {{ $languageName }} language model</li>
                             <li>✅ Standard processing speed</li>
                             <li>❌ Advanced {{ $languageName }} features</li>
@@ -157,7 +157,7 @@
                     </div>
                     <div class="bg-blue-600 text-white p-8 rounded-lg shadow-lg hover-scale w-full md:w-80 transform scale-105">
                         <h3 class="text-2xl font-bold mb-4">Unlimited {{ $languageName }}</h3>
-                        <p class="text-4xl font-bold mb-6">$29<span class="text-lg font-normal">/month</span></p>
+                        <p class="text-4xl font-bold mb-6">$29<span class="text-lg font-normal">/forever</span></p>
                         <ul class="mb-8 space-y-2">
                             <li>✅ Unlimited {{ $languageName }} transcription</li>
                             <li>✅ Advanced {{ $languageName }} language model</li>
@@ -178,7 +178,7 @@
                 <p class="text-xl mb-8">Join thousands of satisfied users and start transcribing {{ $languageName }} for free today!</p>
                 <a href="{{ route('register') }}" class="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full
                 text-lg transition hover-scale inline-block">Start {{ $languageName }} Transcription for Free</a>
-                <p class="mt-4 text-sm">No credit card required. Start with 10 minutes of free {{ $languageName }} transcription.</p>
+                <p class="mt-4 text-sm">No credit card required. Start with 10 free {{ $languageName }} transcription.</p>
             </div>
         </section>
 
@@ -237,7 +237,7 @@
                 <h2 class="text-4xl font-bold mb-6">Transform Your {{ $languageName }} Audio and Video to Text</h2>
                 <p class="text-xl mb-8">Experience the power of AI-driven {{ $languageName }} transcription with Vocaldo.</p>
                 <a href="{{ route('register') }}" class="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full text-lg transition hover-scale inline-block">Start Your Free {{ $languageName }} Transcription</a>
-                <p class="mt-4 text-sm">No credit card required. Begin with 10 minutes of free {{ $languageName }} transcription today.</p>
+                <p class="mt-4 text-sm">No credit card required. Begin with 10 free {{ $languageName }} transcription today.</p>
             </div>
         </section>
     </main>
@@ -255,6 +255,8 @@
                         <li><a href="#features" class="hover:text-blue-400 transition">{{ $languageName }} Features</a></li>
                         <li><a href="#how-it-works" class="hover:text-blue-400 transition">How It Works</a></li>
                         <li><a href="#pricing" class="hover:text-blue-400 transition">{{ $languageName }} Pricing</a></li>
+                                                    <li><a href="/transcribe" class="hover:text-blue-400 transition">Languages</a></li>
+
                     </ul>
                 </div>
                 <div>
