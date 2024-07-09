@@ -100,55 +100,71 @@ class AudioFileController extends Controller
     }
 
     public function generateSummary(AudioFile $audioFile)
-    {
-        $summary = OpenAI::chat()->create([
-            'model' => 'gpt-3.5-turbo',
-            'messages' => [
-                ['role' => 'system', 'content' => 'You are a helpful assistant that summarizes transcriptions.'],
-                ['role' => 'user', 'content' => "Please summarize the following transcription in a concise paragraph:\n\n" . $audioFile->transcription],
-            ],
-        ])->choices[0]->message->content;
-
-        $audioFile->update(['summary' => $summary]);
-
-        return redirect()->route('audio_files.show', $audioFile)->with('success', 'Summary generated successfully.');
+{
+    $user = auth()->user();
+    
+    if (!$user->is_subscriber) {
+        return response()->json(['error' => 'Subscription required'], 403);
     }
 
-    public function translate(AudioFile $audioFile, Request $request)
-    {
-        $request->validate([
-            'target_language' => 'required|string|max:50',
-        ]);
+    $summary = OpenAI::chat()->create([
+        'model' => 'gpt-3.5-turbo',
+        'messages' => [
+            ['role' => 'system', 'content' => 'You are a helpful assistant that summarizes transcriptions.'],
+            ['role' => 'user', 'content' => "Please summarize the following transcription in a concise paragraph:\n\n" . $audioFile->transcription],
+        ],
+    ])->choices[0]->message->content;
 
-        $targetLanguage = $request->input('target_language');
+    $audioFile->update(['summary' => $summary]);
 
-        $translation = OpenAI::chat()->create([
-            'model' => 'gpt-3.5-turbo',
-            'messages' => [
-                ['role' => 'system', 'content' => "You are a helpful assistant that translates text to {$targetLanguage}."],
-                ['role' => 'user', 'content' => "Please translate the following text to {$targetLanguage}:\n\n" . $audioFile->transcription],
-            ],
-        ])->choices[0]->message->content;
+    return response()->json(['summary' => $summary]);
+}
 
-        // Generate SRT file for translation
-        $translatedSrtContent = $this->generateTranslatedSrtContent($audioFile, $translation);
-        $translatedSrtFileName = pathinfo($audioFile->file_name, PATHINFO_FILENAME) . "_{$targetLanguage}.srt";
-        Storage::disk('public')->put('translations/' . $translatedSrtFileName, $translatedSrtContent);
-
-        // Generate VTT file for translation
-        $translatedVttContent = $this->generateTranslatedVttContent($audioFile, $translation);
-        $translatedVttFileName = pathinfo($audioFile->file_name, PATHINFO_FILENAME) . "_{$targetLanguage}.vtt";
-        Storage::disk('public')->put('translations/' . $translatedVttFileName, $translatedVttContent);
-
-        $audioFile->update([
-            'translation' => $translation,
-            'translation_language' => $targetLanguage,
-            'translated_srt_path' => 'translations/' . $translatedSrtFileName,
-            'translated_vtt_path' => 'translations/' . $translatedVttFileName,
-        ]);
-
-        return redirect()->route('audio_files.show', $audioFile)->with('success', "Translation to {$targetLanguage} generated successfully.");
+public function translate(AudioFile $audioFile, Request $request)
+{
+    $user = auth()->user();
+    
+    if (!$user->is_subscriber) {
+        return response()->json(['error' => 'Subscription required'], 403);
     }
+
+    $request->validate([
+        'target_language' => 'required|string|max:50',
+    ]);
+
+    $targetLanguage = $request->input('target_language');
+
+    $translation = OpenAI::chat()->create([
+        'model' => 'gpt-3.5-turbo',
+        'messages' => [
+            ['role' => 'system', 'content' => "You are a helpful assistant that translates text to {$targetLanguage}."],
+            ['role' => 'user', 'content' => "Please translate the following text to {$targetLanguage}:\n\n" . $audioFile->transcription],
+        ],
+    ])->choices[0]->message->content;
+
+    // Generate SRT file for translation
+    $translatedSrtContent = $this->generateTranslatedSrtContent($audioFile, $translation);
+    $translatedSrtFileName = pathinfo($audioFile->file_name, PATHINFO_FILENAME) . "_{$targetLanguage}.srt";
+    Storage::disk('public')->put('translations/' . $translatedSrtFileName, $translatedSrtContent);
+
+    // Generate VTT file for translation
+    $translatedVttContent = $this->generateTranslatedVttContent($audioFile, $translation);
+    $translatedVttFileName = pathinfo($audioFile->file_name, PATHINFO_FILENAME) . "_{$targetLanguage}.vtt";
+    Storage::disk('public')->put('translations/' . $translatedVttFileName, $translatedVttContent);
+
+    $audioFile->update([
+        'translation' => $translation,
+        'translation_language' => $targetLanguage,
+        'translated_srt_path' => 'translations/' . $translatedSrtFileName,
+        'translated_vtt_path' => 'translations/' . $translatedVttFileName,
+    ]);
+
+    return response()->json([
+        'translation' => $translation,
+        'translated_srt_url' => Storage::url('translations/' . $translatedSrtFileName),
+        'translated_vtt_url' => Storage::url('translations/' . $translatedVttFileName),
+    ]);
+}
 
     private function generateSrtContent($segments, $user)
     {

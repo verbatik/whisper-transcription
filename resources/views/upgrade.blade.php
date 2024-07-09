@@ -41,6 +41,14 @@
                                     <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                                     <span class="text-gray-700 dark:text-gray-300">24/7 customer support</span>
                                 </li>
+                                <li class="flex items-center">
+                                    <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span class="text-gray-700 dark:text-gray-300">Generate Summary in one Click</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span class="text-gray-700 dark:text-gray-300">Translate to Any Language</span>
+                                </li>
                             </ul>
                         </div>
                         <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">

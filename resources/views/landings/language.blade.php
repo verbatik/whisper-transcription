@@ -157,12 +157,14 @@
                     </div>
                     <div class="bg-blue-600 text-white p-8 rounded-lg shadow-lg hover-scale w-full md:w-80 transform scale-105">
                         <h3 class="text-2xl font-bold mb-4">Unlimited {{ $languageName }}</h3>
-                        <p class="text-4xl font-bold mb-6">$29<span class="text-lg font-normal">/forever</span></p>
+                        <p class="text-4xl font-bold mb-6">$29<span class="text-lg font-normal">/One Time Payment</span></p>
                         <ul class="mb-8 space-y-2">
                             <li>✅ Unlimited {{ $languageName }} transcription</li>
                             <li>✅ Advanced {{ $languageName }} language model</li>
                             <li>✅ Priority processing</li>
                             <li>✅ All {{ $languageName }} features included</li>
+                            <li>✅ Generate Summary</li>
+                            <li>✅ Translate to Any Language</li>
                         </ul>
                         <a href="{{ route('register') }}" class="block text-center bg-white text-blue-600 hover:bg-blue-100 font-bold py-2 px-4 rounded-full transition">Choose Unlimited</a>
                     </div>
