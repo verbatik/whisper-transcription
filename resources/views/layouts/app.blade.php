@@ -62,7 +62,8 @@
                     </div>
                 </header>
             @endisset
-
+  <!-- Include the dark mode script -->
+  @vite('resources/js/darkMode.js')
             <!-- Page Content -->
             <main>
                 {{ $slot }}
