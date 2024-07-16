@@ -13,7 +13,7 @@ class RemainingGenerationsComposer
             if ($user->is_subscriber) {
                 $remainingGenerations = 'Unlimited';
             } else {
-                $remainingGenerations = 10 - $user->daily_generations;
+                $remainingGenerations = 3 - $user->daily_generations;
             }
             $view->with('remainingGenerations', $remainingGenerations);
         }

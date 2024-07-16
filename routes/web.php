@@ -31,6 +31,9 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/srt-transcription', [LandingPageController::class, 'srtLanding'])->name('srt.landing');
 Route::get('/vtt-transcription', [LandingPageController::class, 'vttLanding'])->name('vtt.landing');
+Route::get('/privacy-policy', [LandingPageController::class, 'privacyPolicy'])->name('privacy.policy');
+Route::get('/terms', [LandingPageController::class, 'terms'])->name('terms');
+
 
 Route::get('login/google', [GoogleController::class, 'redirectToGoogle'])->name('login.google');
 Route::get('auth/callback', [GoogleController::class, 'handleGoogleCallback']);

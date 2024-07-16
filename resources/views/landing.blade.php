@@ -274,7 +274,7 @@
 <p>[00:01:40.000 - 00:01:46.000]  It sounds like Vocaldo has thought of everything. How can people get started?</p>
 <p>[00:01:46.000 - 00:01:52.000]  It's simple. You can start using Vocaldo for free today. Just sign up on our website,</p>
 <p>[00:01:52.000 - 00:01:57.000]  upload your first audio or video file, and experience the power of AI transcription yourself.</p>
-<p>[00:01:58.000 - 00:02:04.000]  We offer 10 free transcriptions per month, with affordable plans for more frequent users.</p>
+<p>[00:01:58.000 - 00:02:04.000]  We offer 3 free transcriptions per month, with affordable plans for more frequent users.</p>
 
 
 
@@ -373,8 +373,8 @@
                         <h3 class="text-2xl font-bold mb-4">Free</h3>
                         <p class="text-4xl font-bold mb-6">$0<span class="text-lg font-normal">/forever</span></p>
                         <ul class="mb-8 space-y-2">
-                            <li>✅ 10 transcriptions/day</li>
-                            <li>✅ 120 minutes total length</li>
+                            <li>✅ 3 transcriptions/day</li>
+                            <li>✅ 5 minutes total length</li>
                             <li>✅ All language support</li>
                             <li>✅ Watermark</li>
                             <li>❌ Priority processing</li>
@@ -456,7 +456,7 @@
                     <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Transcription Workflow?</h2>
                     <p class="text-xl mb-8">Join thousands of satisfied users and start transcribing smarter, faster, and more accurately today!</p>
                     <a href="{{ route('register') }}" class="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full text-lg transition hover-scale inline-block">Get Started for Free</a>
-                    <p class="mt-4 text-sm">No credit card required. Start with 10 free transcriptions per day.</p>
+                    <p class="mt-4 text-sm">No credit card required. Start with 3 free transcriptions per day.</p>
                 </div>
             </section>
 
@@ -494,8 +494,8 @@
                     <div>
                         <h3 class="text-lg font-semibold mb-4">Legal</h3>
                         <ul class="space-y-2">
-                            <li><a href="#" class="hover:text-blue-400 transition">Privacy Policy</a></li>
-                            <li><a href="#" class="hover:text-blue-400 transition">Terms of Service</a></li>
+                            <li><a href="{{ route('privacy.policy') }}" class="hover:text-blue-400 transition">Privacy Policy</a></li>
+                            <li><a href="{{ route('terms') }}" class="hover:text-blue-400 transition">Terms of Service</a></li>
                         </ul>
                     </div>
                     <div>

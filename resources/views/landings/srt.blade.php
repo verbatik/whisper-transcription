@@ -137,7 +137,7 @@
                         <h3 class="text-2xl font-bold mb-4">Free</h3>
                         <p class="text-4xl font-bold mb-6">$0<span class="text-lg font-normal">/forever</span></p>
                         <ul class="mb-8 space-y-2">
-                            <li>✅ 10 minutes of SRT transcription/day</li>
+                            <li>✅ 3 of SRT transcription/day</li>
                             <li>✅ Basic language support</li>
                             <li>❌ Priority processing</li>
                         </ul>

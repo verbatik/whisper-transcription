@@ -126,6 +126,7 @@ class LandingPageController extends Controller
             ->with('meta_description', 'Generate accurate SRT files for your videos with Vocaldo\'s AI-powered transcription. Perfect for adding subtitles to your content.');
     }
 
+
     public function vttLanding()
     {
         return view('landings.vtt')
@@ -133,6 +134,14 @@ class LandingPageController extends Controller
             ->with('meta_description', 'Create VTT files easily with Vocaldo\'s advanced transcription technology. Ideal for adding captions to your web videos.');
     }
 
+    public function privacyPolicy()
+    {
+        return view('privacy-policy');
+    }
+    public function terms()
+    {
+        return view('terms');
+    }
     public function languageLanding($language)
     {
         if (!array_key_exists($language, $this->supportedLanguages)) {
@@ -146,6 +155,7 @@ class LandingPageController extends Controller
             'languageName' => $languageName,
         ]);
     }
+
 
     public function languageList()
     {

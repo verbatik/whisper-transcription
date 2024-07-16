@@ -148,7 +148,7 @@
                         <h3 class="text-2xl font-bold mb-4">Free Trial</h3>
                         <p class="text-4xl font-bold mb-6">$0<span class="text-lg font-normal">/forever</span></p>
                         <ul class="mb-8 space-y-2">
-                            <li>✅ 10 {{ $languageName }} transcription per day</li>
+                            <li>✅ 3 {{ $languageName }} transcription per day</li>
                             <li>✅ Basic {{ $languageName }} language model</li>
                             <li>✅ Standard processing speed</li>
                             <li>❌ Advanced {{ $languageName }} features</li>
@@ -180,7 +180,7 @@
                 <p class="text-xl mb-8">Join thousands of satisfied users and start transcribing {{ $languageName }} for free today!</p>
                 <a href="{{ route('register') }}" class="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full
                 text-lg transition hover-scale inline-block">Start {{ $languageName }} Transcription for Free</a>
-                <p class="mt-4 text-sm">No credit card required. Start with 10 free {{ $languageName }} transcription.</p>
+                <p class="mt-4 text-sm">No credit card required. Start with 3 free {{ $languageName }} transcription.</p>
             </div>
         </section>
 
@@ -239,7 +239,7 @@
                 <h2 class="text-4xl font-bold mb-6">Transform Your {{ $languageName }} Audio and Video to Text</h2>
                 <p class="text-xl mb-8">Experience the power of AI-driven {{ $languageName }} transcription with Vocaldo.</p>
                 <a href="{{ route('register') }}" class="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full text-lg transition hover-scale inline-block">Start Your Free {{ $languageName }} Transcription</a>
-                <p class="mt-4 text-sm">No credit card required. Begin with 10 free {{ $languageName }} transcription today.</p>
+                <p class="mt-4 text-sm">No credit card required. Begin with 3 free {{ $languageName }} transcription today.</p>
             </div>
         </section>
     </main>
@@ -264,8 +264,8 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Legal</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-blue-400 transition">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition">Terms of Service</a></li>
+                        <li><a href="{{ route('privacy.policy') }}" class="hover:text-blue-400 transition">Privacy Policy</a></li>
+                        <li><a href="{{ route('terms') }}" class="hover:text-blue-400 transition">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div>

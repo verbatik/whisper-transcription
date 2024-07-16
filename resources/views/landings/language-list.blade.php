@@ -190,7 +190,7 @@
                 <h2 class="text-4xl font-bold mb-6">Ready to Transcribe in Any Language?</h2>
                 <p class="text-xl mb-8">Join thousands of satisfied users and start transcribing for free today!</p>
                 <a href="{{ route('register') }}" class="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full text-lg transition hover-scale inline-block">Create Your Free Account</a>
-                <p class="mt-4 text-sm">No credit card required. Start with 10 free transcriptions.</p>
+                <p class="mt-4 text-sm">No credit card required. Start with 3 free transcriptions.</p>
             </div>
             </section>
 
@@ -246,7 +246,7 @@
                 <h2 class="text-4xl font-bold mb-6">Experience the Power of Multilingual Transcription</h2>
                 <p class="text-xl mb-8">Join thousands of satisfied users and start transcribing smarter, faster, and more accurately today!</p>
                 <a href="{{ route('register') }}" class="bg-white text-blue-600 hover:bg-blue-100 font-bold py-3 px-8 rounded-full text-lg transition hover-scale inline-block">Get Started for Free</a>
-                <p class="mt-4 text-sm">No credit card required. Start with 10 free transcriptions in any language.</p>
+                <p class="mt-4 text-sm">No credit card required. Start with 3 free transcriptions in any language.</p>
             </div>
         </section>
     </main>
@@ -270,8 +270,8 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Legal</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-blue-400 transition">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition">Terms of Service</a></li>
+                        <li><a href="{{ route('privacy.policy') }}" class="hover:text-blue-400 transition">Privacy Policy</a></li>
+                        <li><a href="{{ route('terms') }}" class="hover:text-blue-400 transition">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div>

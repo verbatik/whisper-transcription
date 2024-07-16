@@ -53,7 +53,7 @@ class User extends Authenticatable implements MustVerifyEmail
             $this->save();
         }
 
-        return $this->daily_generations < 10;
+        return $this->daily_generations < 3;
     }
 
     public function incrementDailyGenerations()
