@@ -1,9 +1,7 @@
 <nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 shadow-sm">
 @auth
         @if(!auth()->user()->is_subscriber)
-            <div class="bg-yellow-400 dark:bg-dark-blue-400 text-black dark:text-white py-2 text-center">
-                <p class="font-bold">🚀 Launch Discount: 30% OFF for Early Birds! Use coupon code BIRDS30 at checkout.</p>
-            </div>
+
         @endif
     @endauth
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

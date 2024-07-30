@@ -40,6 +40,8 @@ Route::get('auth/callback', [GoogleController::class, 'handleGoogleCallback']);
 
 Route::get('/upgrade', [UpgradeController::class, 'show'])->name('upgrade');
 
+// New route for Chrome Extension landing page
+Route::get('/chrome-extension', [LandingPageController::class, 'chromeExtension'])->name('chrome.extension');
 
 
 

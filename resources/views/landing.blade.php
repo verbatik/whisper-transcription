@@ -51,11 +51,7 @@
 </script>
 
 </head>
-<body class="antialiased bg-gray-50 text-gray-800">
-    <!-- Launch Discount Banner -->
-    <div class="bg-yellow-400 text-black py-2 text-center">
-        <p class="font-bold">🚀 Launch Discount: 30% OFF for Early Birds! Use coupon code BIRDS30 at checkout.</p>
-    </div>
+
 <body class="antialiased bg-gray-50 text-gray-800">
     <div class="min-h-screen flex flex-col">
         <header class="bg-white shadow-sm">

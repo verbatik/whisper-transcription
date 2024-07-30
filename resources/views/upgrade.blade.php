@@ -11,15 +11,12 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                <!-- Launch Discount Banner -->
                <div class="bg-yellow-400 dark:bg-yellow-600 text-black dark:text-white p-4 rounded-lg text-center mb-8">
-                <p class="font-bold text-xl">🚀 Launch Discount: 30% OFF for Early Birds!</p>
-                <p>Use coupon code BIRDS30 at checkout to save big!</p>
+                <p class="font-bold text-xl">🚀 Upgrade to Unlimited for Just $29!</p>
+                <p>Transform your workflow with unlimited transcriptions.</p>
             </div>
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl rounded-lg">
                 <div class="p-8">
-                    <div class="text-center mb-8">
-                        <h3 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">Upgrade to Unlimited for Just $29!</h3>
-                        <p class="text-xl text-gray-600 dark:text-gray-300">Transform your workflow with unlimited transcriptions.</p>
-                    </div>
+  
 
                     <div class="grid md:grid-cols-2 gap-8 mb-8">
                         <div class="bg-blue-50 dark:bg-blue-900 p-6 rounded-lg">
@@ -82,7 +79,7 @@
                                 <label for="promo_code" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Have a promo code? <br> Apply at Checkout</label>
                             </div>
                             <button type="submit" class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                                Upgrade Now and Unlock Unlimited Transcriptions
+                               Buy Now!
                             </button>
                         </form>
                         <p class="mt-4 text-sm text-gray-600 dark:text-gray-400">Secure payment processed by Stripe. 3-day money-back guarantee.</p>

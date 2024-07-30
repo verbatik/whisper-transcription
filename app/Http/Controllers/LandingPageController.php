@@ -164,5 +164,10 @@ class LandingPageController extends Controller
         ]);
     }
 
+    public function chromeExtension()
+    {
+        return view('landings.chrome-extension');
+    }
+
     
 }
