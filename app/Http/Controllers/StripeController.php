@@ -10,31 +10,53 @@ class StripeController extends Controller
 {
     public function createCheckoutSession(Request $request)
     {
-        Stripe::setApiKey(config('services.stripe.secret'));
-        $user = auth()->user();
+        Stripe::setApiKey(env('STRIPE_SECRET'));
 
-        $session = Session::create([
-            'payment_method_types' => ['card', 'paypal' ],
-            'customer_email' => $user->email, // Preset the user's email
-            'line_items' => [[
-                'price_data' => [
-                    'currency' => 'usd',
-                    'product_data' => [
-                        'name' => 'Unlimited Transcriptions',
-                        'description' => 'Lifetime access to unlimited transcriptions with Vocaldo',
+        $user = auth()->user();
+        $plan = $request->input('plan');
+
+        if ($plan === 'monthly') {
+            $session = Session::create([
+                'payment_method_types' => ['card'],
+                'customer_email' => $user->email,
+                'line_items' => [[
+                    'price_data' => [
+                        'currency' => 'usd',
+                        'product_data' => [
+                            'name' => 'Monthly Unlimited Transcriptions',
+                            'description' => 'Monthly subscription for unlimited transcriptions with Vocaldo',
+                        ],
+                        'unit_amount' => 500, // $5.00
+                        'recurring' => [
+                            'interval' => 'month',
+                        ],
                     ],
-                    'unit_amount' => 2900, // $29.00
-                ],
-                'quantity' => 1,
-            ]],
-            'mode' => 'payment',
-            'allow_promotion_codes' => true, // Enable promo code field
-            'success_url' => route('stripe.success'),
-            'cancel_url' => route('stripe.cancel'),
-            'metadata' => [
-                'user_id' => $user->id,
-            ],
-        ]);
+                    'quantity' => 1,
+                ]],
+                'mode' => 'subscription',
+                'success_url' => route('stripe.success', ['plan' => 'monthly']),
+                'cancel_url' => route('stripe.cancel'),
+            ]);
+        } else {
+            $session = Session::create([
+                'payment_method_types' => ['card'],
+                'customer_email' => $user->email,
+                'line_items' => [[
+                    'price_data' => [
+                        'currency' => 'usd',
+                        'product_data' => [
+                            'name' => 'Lifetime Unlimited Transcriptions',
+                            'description' => 'Lifetime access to unlimited transcriptions with Vocaldo',
+                        ],
+                        'unit_amount' => 2900, // $29.00
+                    ],
+                    'quantity' => 1,
+                ]],
+                'mode' => 'payment',
+                'success_url' => route('stripe.success', ['plan' => 'lifetime']),
+                'cancel_url' => route('stripe.cancel'),
+            ]);
+        }
 
         return redirect($session->url);
     }
@@ -42,6 +64,16 @@ class StripeController extends Controller
     public function success(Request $request)
     {
         $user = auth()->user();
+        $plan = $request->query('plan');
+
+        if ($plan === 'monthly') {
+            $user->subscription_type = 'monthly';
+            $user->subscription_ends_at = now()->addMonth();
+        } else {
+            $user->subscription_type = 'lifetime';
+            $user->subscription_ends_at = null;
+        }
+
         $user->is_subscriber = true;
         $user->save();
 

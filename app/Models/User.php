@@ -22,6 +22,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'daily_generations',
         'generations_reset_at',
         'stripe_id',
+        'subscription_type',
+        'subscription_ends_at',
+        'generations_reset_at',
+        'stripe_id',
     ];
 
     protected $hidden = [
@@ -34,6 +38,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'password' => 'hashed',
         'is_subscriber' => 'boolean',
         'generations_reset_at' => 'datetime',
+        'subscription_ends_at' => 'datetime',
     ];
 
     public function audioFiles()
